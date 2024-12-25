@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts About Nature</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e7f3fe;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Facts About Nature</h1>
+        <ul id="facts-list"></ul>
+        <button id="new-fact-btn">Show Another Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "The Amazon rainforest produces more than 20% of the world's oxygen, making it one of the most vital ecosystems on the planet.",
+            "Coral reefs are often called the 'rainforests of the sea' because they are home to an incredible diversity of marine life, despite covering less than 1% of the ocean floor.",
+            "Trees can communicate with each other through a network of fungi in the soil, often referred to as the 'Wood Wide Web.' They can share nutrients and even warn each other about pests.",
+            "The blue whale is the largest animal on the planet, reaching lengths of up to 100 feet (30 meters) and weighing as much as 200 tons (181 metric tonnes).",
+            "Some organisms, like certain species of jellyfish and fireflies, can produce their own light through a chemical reaction in their bodies, a phenomenon known as bioluminescence.",
+            "Mount Everest, the highest mountain in the world, grows about 4 millimeters taller every year due to geological uplift.",
+            "The Great Barrier Reef is the largest living structure on Earth and can be seen from space. It is made up of over 2,900 individual reefs and 900 islands.",
+            "The Arctic tundra is one of the coldest and driest places on Earth, but it is also home to a variety of unique plants and animals that have adapted to survive in extreme conditions.",
+            "Monarch butterflies are known for their incredible migration journey, traveling up to 3,000 miles (4,800 kilometers) from North America to central Mexico for the winter.",
+            "More than 80% of the ocean is unexplored and unmapped, making it one of the least understood areas of our planet. Scientists believe there are many undiscovered species living in the deep sea."
+        ];
+
+        let currentFactIndex = 0;
+
+        function displayFact() {
+            const factsList = document.getElementById('facts-list');
+            factsList.innerHTML = ''; // Clear previous facts
+            const factItem = document.createElement('li');
+            factItem.textContent = facts[currentFactIndex];
+            factsList.appendChild(factItem);
+            currentFactIndex = (currentFactIndex + 1) % facts.length; // Loop through facts
+        }
+
+        document.getElementById('new-fact-btn').addEventListener('click', displayFact);
+
+        // Display the first fact on page load
+        displayFact();
+    </script>
+</body>
+</html>
